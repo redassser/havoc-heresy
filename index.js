@@ -5,13 +5,12 @@ var request = require('request');
 var cheerio = require('cheerio');
 client.on("ready", () => {
   console.log("I am ready!");
-  client.user.setActivity("");
+  client.user.setActivity("!sstatus");
 });
 
 client.on("message", (message) => {
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
-  var argu = args.join(" ");
   if (!message.content.startsWith(prefix)) return;
     if (command === "sstatus") {
     request('https://kigen.co/scpsl/getinfo.php?ip=98.157.71.215&port=7777', function(err, resp, html) {
