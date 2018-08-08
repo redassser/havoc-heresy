@@ -1,6 +1,5 @@
 var Discord = require("discord.js");
 var client = new Discord.Client();
-var config = require("./config.json");
 var prefix = "!";
 var request = require('request');
 var cheerio = require('cheerio');
@@ -395,4 +394,4 @@ client.on("message", (message) => {
 });
   }
 });
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
